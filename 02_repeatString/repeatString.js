@@ -1,10 +1,15 @@
 const repeatString = function(string, num) {
-    list = [];
-    for (let i = 0; i < num; i++) {
-        list.push(string);
+    if (num < 0) {
+        return "ERROR";
+    } else {
+        list = [];
+        for (let i = 0; i < num; i++) {
+            list.push(string);
+        }
+        return list.join("");
+
     }
-    return list.join("");
-};
+    };
 
 // Do not edit below this line
 module.exports = repeatString;
