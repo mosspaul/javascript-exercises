@@ -2,20 +2,11 @@ const fibonacci = function (num) {
     if (num < 0) {
         return "OOPS";
     }
-    let i = 1;
-    let n = 0;
-    let list = [0, 1];
-    while (i <= num) {
-        list.push(fib(n));
-        n++;
-        i++;
-    }
-    function fib(n) {
-        return list[n] + list[n + 1];
-    }
-    return list[num];
+    // This uses the equation a{n} = [Phi^n – (phi)^n] / Sqrt[5]
+    let sqr = Math.sqrt(5);
+    let first = (1 + sqr) / 2;
+    let last = (1 - sqr) / 2;
+    return Math.floor((Math.pow(first, num) - Math.pow(last, num)) / sqr);
 };
-
-console.log(fibonacci(4));
 // Do not edit below this line
 module.exports = fibonacci;
